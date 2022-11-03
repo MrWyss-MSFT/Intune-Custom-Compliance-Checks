@@ -1,0 +1,18 @@
+{
+    "Rules": [
+        {
+            "SettingName": "Update Age In Days",
+            "Operator": "LessThan",
+            "DataType": "Int64",
+            "Operand": "90",
+            "MoreInfoURL": "https://support.microsoft.com/en-us/windows/update-windows-3c5ae7fc-9fb6-9af1-1984-b5e0412c556a",
+            "RemediationStrings": [
+                {
+                    "Language": "en_US",
+                    "Title": "Windows needs to be updated, it hasn't been since 90 days",
+                    "Description": "Install the latest cumulative update, is not older than 90 days"
+                }
+            ]
+        }
+    ]
+}

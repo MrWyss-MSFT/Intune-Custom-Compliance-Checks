@@ -1,0 +1,60 @@
+{
+    "Rules": [
+        {
+            "SettingName": "ProtectionStatus",
+            "Operator": "IsEquals",
+            "DataType": "String",
+            "Operand": "On",
+            "MoreInfoURL": "https://github.com/MrWyss-MSFT/Intune-Custom-Compliance-Checks",
+            "RemediationStrings": [
+                {
+                    "Language": "en_US",
+                    "Title": "Non-Compliant BitLocker ProtectionStatus",
+                    "Description": "Protection Status should be on"
+                }
+            ]
+        },
+        {
+            "SettingName": "EncryptionMethod",
+            "Operator": "IsEquals",
+            "DataType": "String",
+            "Operand": "XtsAes256",
+            "MoreInfoURL": "https://github.com/MrWyss-MSFT/Intune-Custom-Compliance-Checks",
+            "RemediationStrings": [
+                {
+                    "Language": "en_US",
+                    "Title": "Non-Compliant BitLocker Encryption Method",
+                    "Description": "Encryption Method should XtsAes128"
+                }
+            ]
+        },
+        {
+            "SettingName": "EncryptionPercentage",
+            "Operator": "IsEquals",
+            "DataType": "String",
+            "Operand": "100",
+            "MoreInfoURL": "https://github.com/MrWyss-MSFT/Intune-Custom-Compliance-Checks",
+            "RemediationStrings": [
+                {
+                    "Language": "en_US",
+                    "Title": "Non-Compliant BitLocker EncryptionPercentage",
+                    "Description": "EncryptionPercentage should be 100%"
+                }
+            ]
+        },
+        {
+            "SettingName": "VolumeStatus",
+            "Operator": "IsEquals",
+            "DataType": "String",
+            "Operand": "FullyEncrypted",
+            "MoreInfoURL": "https://github.com/MrWyss-MSFT/Intune-Custom-Compliance-Checks",
+            "RemediationStrings": [
+                {
+                    "Language": "en_US",
+                    "Title": "Non-Compliant BitLocker VolumeStatus",
+                    "Description": "VolumeStatus should be FullyEncrypted"
+                }
+            ]
+        }
+    ]
+}
