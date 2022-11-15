@@ -6,6 +6,12 @@ A collection of useful Intune custom compliance scripts
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.1] - 2022-11-15
+
+### Added
+
+- **computer name**, checks the computer name against allow and prohibit match list
+
 ## [initial] - 2022-11-03
 
 ### Added
