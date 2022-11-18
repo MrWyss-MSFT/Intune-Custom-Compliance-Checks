@@ -1,9 +1,16 @@
-$SearchString = "*Cumulative Update for Windows 1*"
-$Session = New-Object -ComObject "Microsoft.Update.Session"
-$Searcher = $Session.CreateUpdateSearcher()
-$HistoryCount = $Searcher.GetTotalHistoryCount()
-$CUs = $Searcher.QueryHistory(1, $HistoryCount) 
-$LCU = $CUs | Where-Object Title -like $SearchString | Where-Object ResultCode -eq 2 | Sort-Object Date | Select-Object -Last 1
+Function Get-CUs {
+    $Session = New-Object -ComObject "Microsoft.Update.Session"
+    $Searcher = $Session.CreateUpdateSearcher()
+    $HistoryCount = $Searcher.GetTotalHistoryCount()
+    $AllUpdates = $Searcher.QueryHistory(1, $HistoryCount)
+    Foreach ($CU in $AllUpdates) {
+        If (($CU.Categories.count -eq 0) -and ($CU.Title -like "*(KB*)")) {
+            new-object psobject -property  @{Title = $CU.Title; Date = $CU.Date}
+        }
+    }
+}
+
+$LCU = Get-CUs | Sort-Object Date | Select-Object -Last 1
 $LCUage = (New-TimeSpan -Start $LCU.Date -End (get-date)).Days
 $LCUhash = @{
     #'Update Title'       = $LCU.Title.ToString();
