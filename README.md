@@ -6,6 +6,12 @@ A collection of useful Intune custom compliance scripts
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.3] - 2022-11-19
+
+### Fixed
+
+- **Cumulative update age**, fix if there is no LCU
+
 ## [v1.0.2] - 2022-11-18
 
 ### Changed
